@@ -103,17 +103,17 @@
     "buttons": [
       {
         "text": "📧 Email Me",
-        "href": "mailto:your.email@example.com",
+        "href": "mailto:augyerislioga.s@gmail.com",
         "type": "primary"
       },
       {
         "text": "💼 LinkedIn",
-        "href": "https://linkedin.com/in/yourprofile",
+        "href": "https://linkedin.com/in/augyeris",
         "type": "secondary"
       },
       {
         "text": "🔗 GitHub",
-        "href": "https://github.com/yourusername",
+        "href": "https://github.com/masegy",
         "type": "tertiary"
       }
     ]
