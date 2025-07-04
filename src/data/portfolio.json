@@ -1,0 +1,124 @@
+{
+  "personal": {
+    "name": "Augyeris Lioga Seandrio",
+    "shortName": "Augyeris Lioga",
+    "title": "DevOps & Frontend Engineer",
+    "subtitle": "Building scalable infrastructure and beautiful user experiences",
+    "email": "your.email@example.com",
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "github": "https://github.com/yourusername"
+  },
+  "navigation": [
+    { "name": "About", "href": "#about" },
+    { "name": "Skills", "href": "#skills" },
+    { "name": "Projects", "href": "#projects" },
+    { "name": "Contact", "href": "#contact" }
+  ],
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I'm a passionate engineer with expertise in both DevOps and Frontend development. I love building robust CI/CD pipelines, managing cloud infrastructure, and creating intuitive user interfaces that deliver exceptional user experiences.",
+      "My dual expertise allows me to bridge the gap between development and operations, ensuring smooth deployments and scalable applications."
+    ]
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "categories": [
+      {
+        "icon": "🚀",
+        "title": "DevOps & Infrastructure",
+        "skills": [
+          "Docker",
+          "Kubernetes",
+          "AWS/GCP",
+          "Terraform",
+          "CI/CD",
+          "Monitoring"
+        ]
+      },
+      {
+        "icon": "💻",
+        "title": "Frontend Development",
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Vue.js",
+          "Node.js"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "items": [
+      {
+        "icon": "🔧",
+        "title": "ML Model Deployment Pipeline",
+        "description": "Kubernetes-based ML inference service with KServe, featuring automatic scaling and monitoring.",
+        "tags": ["Kubernetes", "KServe", "MLOps"],
+        "tagColor": "blue"
+      },
+      {
+        "icon": "☁️",
+        "title": "Multi-Cloud Infrastructure",
+        "description": "Terraform-managed infrastructure across AWS and GCP with automated CI/CD pipelines.",
+        "tags": ["Terraform", "AWS", "GCP"],
+        "tagColor": "green"
+      },
+      {
+        "icon": "📊",
+        "title": "Monitoring Stack",
+        "description": "Complete observability solution with Prometheus, Grafana, and alerting for microservices.",
+        "tags": ["Prometheus", "Grafana", "Docker"],
+        "tagColor": "purple"
+      },
+      {
+        "icon": "🌐",
+        "title": "E-commerce Platform",
+        "description": "Full-stack e-commerce solution with React, Next.js, and serverless backend.",
+        "tags": ["React", "Next.js", "Stripe"],
+        "tagColor": "blue"
+      },
+      {
+        "icon": "📱",
+        "title": "Dashboard Analytics",
+        "description": "Real-time analytics dashboard with interactive charts and data visualization.",
+        "tags": ["Vue.js", "D3.js", "WebSocket"],
+        "tagColor": "green"
+      },
+      {
+        "icon": "🎨",
+        "title": "Design System",
+        "description": "Comprehensive design system with reusable components and documentation.",
+        "tags": ["Storybook", "TypeScript", "Tailwind"],
+        "tagColor": "purple"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "I'm always interested in new opportunities and collaborations. Let's connect and discuss how we can work together!",
+    "buttons": [
+      {
+        "text": "📧 Email Me",
+        "href": "mailto:your.email@example.com",
+        "type": "primary"
+      },
+      {
+        "text": "💼 LinkedIn",
+        "href": "https://linkedin.com/in/yourprofile",
+        "type": "secondary"
+      },
+      {
+        "text": "🔗 GitHub",
+        "href": "https://github.com/yourusername",
+        "type": "tertiary"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2024 Augyeris Lioga Seandrio. Built with Next.js and Tailwind CSS."
+  }
+}
