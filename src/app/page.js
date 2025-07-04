@@ -10,13 +10,16 @@ import BackToTop from '../components/BackToTop';
 export default function Home() {
   const { personal, navigation, about, skills, projects, contact, footer } = portfolioData;
   
-  // Animation variants
+  // Simplified animation variants to prevent conflicts
   const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { 
+        duration: 0.6, 
+        ease: "easeOut"
+      }
     }
   };
 
@@ -25,18 +28,20 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
+        staggerChildren: 0.08,
+        delayChildren: 0.05
       }
     }
   };
 
   const staggerItem = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0 },
     visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      opacity: 1,
+      transition: { 
+        duration: 0.5, 
+        ease: "easeOut"
+      }
     }
   };
 
@@ -50,14 +55,14 @@ export default function Home() {
 
   return (
     <div 
-      className="min-h-screen transition-all duration-300"
+      className="min-h-screen "
       style={{
         background: `linear-gradient(to bottom right, var(--bg-secondary), var(--bg-tertiary))`
       }}
     >
       {/* Header */}
       <header 
-        className="fixed top-0 w-full backdrop-blur-md border-b z-50 transition-all duration-300"
+        className="fixed top-0 w-full backdrop-blur-md border-b z-50 "
         style={{
           backgroundColor: 'var(--bg-primary)',
           borderColor: 'var(--border-color)',
@@ -67,7 +72,7 @@ export default function Home() {
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div 
-              className="text-2xl font-bold transition-colors duration-300"
+              className="text-2xl font-bold "
               style={{ color: 'var(--text-primary)' }}
             >
               {personal.shortName}
@@ -77,7 +82,7 @@ export default function Home() {
                 <a
                   key={index}
                   href={item.href}
-                  className="transition-colors duration-300 hover:opacity-80"
+                  className=" hover:opacity-80"
                   style={{ color: 'var(--text-secondary)' }}
                 >
                   {item.name}
@@ -99,7 +104,7 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6 transition-colors duration-300"
+              className="text-5xl md:text-7xl font-bold mb-6 "
               style={{ color: 'var(--text-primary)' }}
               variants={staggerItem}
             >
@@ -107,7 +112,7 @@ export default function Home() {
               <span className="block">{personal.title}</span>
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl mb-8 leading-relaxed transition-colors duration-300"
+              className="text-xl md:text-2xl mb-8 leading-relaxed "
               style={{ color: 'var(--text-secondary)' }}
               variants={staggerItem}
             >
@@ -119,7 +124,7 @@ export default function Home() {
             >
               <motion.a
                 href="#projects"
-                className="px-8 py-3 rounded-lg font-semibold transition-all duration-300 text-white"
+                className="px-8 py-3 rounded-lg font-semibold  text-white"
                 style={{ 
                   backgroundColor: 'var(--blue-600)',
                 }}
@@ -130,7 +135,7 @@ export default function Home() {
               </motion.a>
               <motion.a
                 href="#contact"
-                className="border-2 px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                className="border-2 px-8 py-3 rounded-lg font-semibold "
                 style={{ 
                   borderColor: 'var(--blue-600)',
                   color: 'var(--blue-600)',
@@ -148,16 +153,17 @@ export default function Home() {
       {/* About Section */}
       <motion.section 
         id="about" 
-        className="py-16 px-6 transition-all duration-300"
+        className="py-16 px-6"
         style={{ backgroundColor: 'var(--bg-primary)' }}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "0px", amount: 0.3 }}
         variants={fadeInUp}
+        data-motion="section"
       >
         <div className="container mx-auto">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-12 transition-colors duration-300"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 "
             style={{ color: 'var(--text-primary)' }}
             variants={fadeInUp}
           >
@@ -168,12 +174,12 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.4 }}
           >
             {about.paragraphs.map((paragraph, index) => (
               <motion.p
                 key={index}
-                className={`text-lg transition-colors duration-300 ${
+                className={`text-lg  ${
                   index < about.paragraphs.length - 1 ? 'mb-6' : ''
                 }`}
                 style={{ color: 'var(--text-secondary)' }}
@@ -189,16 +195,16 @@ export default function Home() {
       {/* Skills Section */}
       <motion.section 
         id="skills" 
-        className="py-16 px-6 transition-all duration-300"
+        className="py-16 px-6 "
         style={{ backgroundColor: 'var(--bg-secondary)' }}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "0px", amount: 0.3 }}
         variants={fadeInUp}
       >
         <div className="container mx-auto">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-12 transition-colors duration-300"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 "
             style={{ color: 'var(--text-primary)' }}
             variants={fadeInUp}
           >
@@ -210,12 +216,12 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "0px", amount: 0.3 }}
           >
             {skills.categories.map((category, index) => (
               <motion.div 
                 key={index} 
-                className="rounded-xl shadow-lg p-6 sm:p-8 transition-all duration-300 border"
+                className="rounded-xl shadow-lg p-6 sm:p-8  border"
                 style={{ 
                   backgroundColor: 'var(--bg-card)',
                   borderColor: 'var(--border-color)',
@@ -223,21 +229,20 @@ export default function Home() {
                 }}
                 variants={staggerItem}
                 whileHover={{ 
-                  y: -8,
-                  scale: 1.02,
-                  transition: { duration: 0.3 }
+                  y: -2,
+                  transition: { duration: 0.2, ease: "easeOut" }
                 }}
               >
                 <motion.h3 
-                  className="text-xl sm:text-2xl font-bold mb-8 flex items-center transition-colors duration-300"
+                  className="text-xl sm:text-2xl font-bold mb-8 flex items-center "
                   style={{ color: 'var(--text-primary)' }}
                   variants={staggerItem}
                 >
                   <motion.span 
                     className="text-2xl sm:text-3xl mr-3 flex-shrink-0"
-                    initial={{ rotate: 0 }}
-                    whileInView={{ rotate: 360 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
+                    initial={{ opacity: 0.8 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                   >
                     {category.icon}
                   </motion.span>
@@ -250,7 +255,7 @@ export default function Home() {
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div 
                       key={skillIndex} 
-                      className="p-4 rounded-lg text-center transition-all duration-300 border"
+                      className="p-4 rounded-lg text-center  border"
                       style={{ 
                         backgroundColor: 'var(--bg-tertiary)',
                         borderColor: 'var(--border-color)',
@@ -258,13 +263,12 @@ export default function Home() {
                       }}
                       variants={staggerItem}
                       whileHover={{ 
-                        scale: 1.05,
-                        y: -2,
+                        scale: 1.02,
                         transition: { duration: 0.2 }
                       }}
                     >
                       <span 
-                        className="font-semibold text-sm sm:text-base transition-colors duration-300"
+                        className="font-semibold text-sm sm:text-base "
                         style={{ color: 'var(--text-primary)' }}
                       >
                         {skill}
@@ -281,7 +285,7 @@ export default function Home() {
       {/* Projects Section */}
       <motion.section 
         id="projects" 
-        className="py-16 px-6 transition-all duration-300"
+        className="py-16 px-6 "
         style={{ backgroundColor: 'var(--bg-primary)' }}
         initial="hidden"
         whileInView="visible"
@@ -290,7 +294,7 @@ export default function Home() {
       >
         <div className="container mx-auto">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-12 transition-colors duration-300"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 "
             style={{ color: 'var(--text-primary)' }}
             variants={fadeInUp}
           >
@@ -302,41 +306,40 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "0px", amount: 0.3 }}
           >
             {projects.items.map((project, index) => (
               <motion.div 
                 key={index} 
-                className="rounded-lg shadow-lg p-6 transition-all duration-300"
+                className="rounded-lg shadow-lg p-6 "
                 style={{ 
                   backgroundColor: 'var(--bg-card)',
                   boxShadow: `0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color)`
                 }}
                 variants={staggerItem}
                 whileHover={{ 
-                  scale: 1.05,
-                  rotateY: 5,
-                  transition: { duration: 0.3 }
+                  y: -2,
+                  transition: { duration: 0.2 }
                 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.div 
                   className="text-3xl mb-4"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring", stiffness: 260, damping: 20 }}
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
                 >
                   {project.icon}
                 </motion.div>
                 <motion.h3 
-                  className="text-xl font-bold mb-3 transition-colors duration-300"
+                  className="text-xl font-bold mb-3 "
                   style={{ color: 'var(--text-primary)' }}
                   variants={staggerItem}
                 >
                   {project.title}
                 </motion.h3>
                 <motion.p 
-                  className="mb-4 transition-colors duration-300"
+                  className="mb-4 "
                   style={{ color: 'var(--text-secondary)' }}
                   variants={staggerItem}
                 >
@@ -349,7 +352,7 @@ export default function Home() {
                   {project.tags.map((tag, tagIndex) => (
                     <motion.span
                       key={tagIndex}
-                      className="px-2 py-1 rounded text-sm transition-all duration-300"
+                      className="px-2 py-1 rounded text-sm "
                       style={{
                         backgroundColor: project.tagColor === 'blue' ? 'var(--blue-100)' :
                                        project.tagColor === 'green' ? 'var(--green-100)' :
@@ -358,10 +361,9 @@ export default function Home() {
                                project.tagColor === 'green' ? 'var(--green-800)' :
                                'var(--purple-800)'
                       }}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: tagIndex * 0.1 + 0.3 }}
-                      whileHover={{ scale: 1.1 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: tagIndex * 0.02 + 0.1, duration: 0.3 }}
                     >
                       {tag}
                     </motion.span>
@@ -376,7 +378,7 @@ export default function Home() {
       {/* Contact Section */}
       <motion.section 
         id="contact" 
-        className="py-16 px-6 transition-all duration-300"
+        className="py-16 px-6 "
         style={{ backgroundColor: 'var(--bg-secondary)' }}
         initial="hidden"
         whileInView="visible"
@@ -385,7 +387,7 @@ export default function Home() {
       >
         <div className="container mx-auto">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-12 transition-colors duration-300"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 "
             style={{ color: 'var(--text-primary)' }}
             variants={fadeInUp}
           >
@@ -399,7 +401,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <motion.p 
-              className="text-lg mb-8 transition-colors duration-300"
+              className="text-lg mb-8 "
               style={{ color: 'var(--text-secondary)' }}
               variants={staggerItem}
             >
@@ -415,7 +417,7 @@ export default function Home() {
                   href={button.href}
                   target={button.href.startsWith('mailto:') ? '_self' : '_blank'}
                   rel={button.href.startsWith('mailto:') ? '' : 'noopener noreferrer'}
-                  className="px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center"
+                  className="px-8 py-3 rounded-lg font-semibold  flex items-center justify-center"
                   style={{
                     backgroundColor: button.type === 'primary' ? 'var(--blue-600)' : 'transparent',
                     color: button.type === 'primary' ? '#ffffff' : 'var(--blue-600)',
@@ -437,12 +439,12 @@ export default function Home() {
 
       {/* Footer */}
       <footer 
-        className="py-8 px-6 transition-all duration-300"
+        className="py-8 px-6 "
         style={{ backgroundColor: 'var(--bg-tertiary)' }}
       >
         <div className="container mx-auto text-center">
           <p 
-            className="transition-colors duration-300"
+            className=""
             style={{ color: 'var(--text-muted)' }}
           >
             {footer.copyright}
