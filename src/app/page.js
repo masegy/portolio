@@ -9,35 +9,44 @@ import BackToTop from '../components/BackToTop';
 
 const experiences = [
   {
-    role: 'Frontend Developer',
-    company: 'PT Bank Negara Indonesia Tbk',
-    period: 'Apr 2022 — Present',
+    role: 'DevOps Engineer',
+    company: 'Wondr by BNI — PT Bank Negara Indonesia Tbk',
+    period: 'Nov 2024 — Present',
     type: 'Full-time',
     points: [
-      'Partisipasi dalam pengembangan Frontend dengan fokus pada projek Microsite dan Microfrontend.',
-      'Kolaborasi pengembangan microsite Bluebird, Traveloka, dan Riwayat Transaksi Lifestyle yang terintegrasi BNI Mobile Banking.',
-      'Pengembangan dashboard microfrontend untuk BP Tapera, SKK Migas, dan Kartu Kredit Pemerintah.',
-      'Bertanggung jawab atas konfigurasi arsitektur dan deployment menggunakan OpenShift Container Platform.',
+      'Membangun dan memelihara pipeline CI/CD untuk aplikasi Android dan iOS menggunakan Jenkins, Fastlane, yang terintegrasi dengan Vault, Firebase App Distribution, dan App Store Connect.',
+      'Mengembangkan scripting deployment dinamis menggunakan Groovy (Jenkinsfile) dan Shell scripts untuk otomatisasi rilis.',
+      'Mengelola infrastruktur OpenShift on-premises, termasuk deployment microservice dan templating pipeline berbasis YAML.',
+      'Mengintegrasikan Elastic APM Java Agent untuk instrumentasi otomatis pada aplikasi Java.',
+      'Mendiagnosis dan menyelesaikan ketidakseimbangan penggunaan disk Kafka.',
+    ],
+  },
+  {
+    role: 'Frontend Developer',
+    company: 'PT Bank Negara Indonesia (Persero) Tbk',
+    period: 'Apr 2022 — Nov 2024',
+    type: 'Full-time',
+    points: [
+      'Mengembangkan proyek microsite yang terintegrasi dengan BNI Mobile Banking (Bluebird, Traveloka, Lifestyle).',
+      'Menyelesaikan dashboard microfrontend untuk BP Tapera, KKP, dan SKK Migas.',
     ],
   },
   {
     role: 'Intern Frontend Developer',
-    company: 'PT Bank Negara Indonesia Tbk',
+    company: 'PT Bank Negara Indonesia (Persero) Tbk',
     period: 'Feb 2022 — Apr 2022',
     type: 'Internship',
     points: [
-      'Mengimplementasikan arsitektur microfrontend menggunakan Single-spa JS dan React dalam proyek OPFA.',
-      'Meningkatkan user experience dengan optimalisasi struktur dan navigasi.',
+      'Mengimplementasikan arsitektur microfrontend menggunakan Single-spa JavaScript untuk proyek OPFA.',
     ],
   },
   {
     role: 'Production Control Management System Data Entry',
     company: 'Sembcorp Marine Ltd',
-    period: 'Oct 2021 — Jan 2023',
+    period: 'Oct 2021 — Jan 2022',
     type: 'Contract',
     points: [
-      'Memastikan pengaturan gambar akurat dan pembaharuan revisi tepat waktu.',
-      'Mengelola pencatatan progresif Catatan Fabrikasi dan Nomor Jejak Material.',
+      'Mengelola dokumentasi progresif untuk Fabrication Records dan Material Traceability Numbers.',
     ],
   },
   {
@@ -46,23 +55,46 @@ const experiences = [
     period: 'Jan 2019 — Feb 2019',
     type: 'Internship',
     points: [
-      'Pengembangan website ticketing general affair menggunakan .NET dan Bootstrap.',
-      'Pemeliharaan perangkat lunak dan keras perusahaan.',
+      'Mengembangkan sistem web ticketing menggunakan .NET dan Bootstrap.',
     ],
   },
 ];
 
+const certifications = [
+  {
+    name: 'ACA Certified — Alibaba Cloud Associate',
+    year: '2024',
+    issuer: 'Alibaba Cloud',
+  },
+  {
+    name: 'Full Stack Developer',
+    year: '2022',
+    issuer: 'Professional Certification',
+  },
+  {
+    name: 'IT Perbankan — Kelas Front End',
+    year: '2021',
+    issuer: 'Banking IT Program',
+  },
+];
+
 const skills = [
-  'HTML',
-  'CSS',
-  'React JS',
-  'TailwindCSS',
-  'Single-Spa JS',
-  'Microfrontend',
-  'Node.js',
-  'OpenShift Container Platform',
-  'Google Cloud Platform',
+  'Jenkins',
+  'Fastlane',
   'Docker',
+  'OpenShift',
+  'Groovy',
+  'Shell Scripting',
+  'Kafka',
+  'Elastic APM',
+  'Vault',
+  'GCP',
+  'React JS',
+  'Single-Spa JS',
+  'Node.js',
+  'TailwindCSS',
+  'YAML',
+  'Git',
 ];
 
 /* ─── Animation variants ────────────────────────────────── */
@@ -141,7 +173,7 @@ export default function Home() {
             </a>
 
             <div className="flex items-center gap-1 sm:gap-3">
-              {['Experience', 'Skills'].map((item) => (
+              {['Experience', 'Certifications', 'Skills'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -217,7 +249,7 @@ export default function Home() {
               custom={3}
               className="mt-4 text-xl sm:text-2xl md:text-3xl font-semibold text-accent-600 dark:text-accent-400"
             >
-              Frontend Developer
+              DevOps Engineer
             </motion.p>
 
             {/* Bio */}
@@ -226,9 +258,7 @@ export default function Home() {
               custom={4}
               className="mt-6 text-base sm:text-lg text-surface-600 dark:text-surface-400 leading-relaxed max-w-2xl mx-auto"
             >
-              Pengembang web frontend yang terampil menciptakan pengalaman web yang menarik dan ramah pengguna.
-              Terbiasa berkoordinasi dengan tim, desainer UI/UX, dan backend developer.
-              Antusias mencari pengetahuan baru dan mengikuti tren industri.
+              DevOps Engineer dengan fondasi kuat di frontend development, berpengalaman dalam otomatisasi dan optimasi pipeline CI/CD, deployment infrastruktur, dan observabilitas aplikasi. Mahir menjembatani pengembangan dan operasional melalui scripting, containerization, dan alat orkestrasi. Terus belajar dan bersemangat untuk pengiriman perangkat lunak yang efisien, andal, dan aman.
             </motion.p>
 
             {/* Social links */}
@@ -329,8 +359,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Skills Section ── */}
-      <section id="skills" className="py-20 sm:py-28 px-6 bg-surface-50 dark:bg-surface-950">
+      {/* ── Certifications Section ── */}
+      <section id="certifications" className="py-20 sm:py-28 px-6 bg-surface-50 dark:bg-surface-950">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial="hidden"
@@ -341,6 +371,59 @@ export default function Home() {
             {/* Section heading */}
             <motion.div variants={fadeUp} className="text-center mb-16">
               <div className="inline-flex items-center gap-2 rounded-full border border-surface-200 dark:border-surface-700 bg-white dark:bg-surface-800 px-4 py-1.5 text-sm font-medium text-surface-600 dark:text-surface-400 mb-4">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                    d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                </svg>
+                Licenses & Certifications
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-surface-50">
+                Sertifikasi
+              </h2>
+            </motion.div>
+
+            {/* Certifications grid */}
+            <motion.div
+              variants={stagger}
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+            >
+              {certifications.map((cert, i) => (
+                <motion.div
+                  key={cert.name}
+                  variants={scaleIn}
+                  className="group rounded-2xl border border-surface-200 dark:border-surface-800 bg-white dark:bg-surface-800/50 p-5 sm:p-6 text-center transition-all hover:border-accent-300 dark:hover:border-accent-500/30 hover:shadow-lg hover:shadow-accent-500/5"
+                >
+                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent-50 dark:bg-accent-500/10 text-accent-600 dark:text-accent-400 mb-4">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                        d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                    </svg>
+                  </span>
+                  <h3 className="text-sm sm:text-base font-bold text-surface-900 dark:text-surface-50 mb-1">
+                    {cert.name}
+                  </h3>
+                  <p className="text-xs text-surface-500 dark:text-surface-400">
+                    {cert.issuer} · {cert.year}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Skills Section ── */}
+      <section id="skills" className="py-20 sm:py-28 px-6 bg-white dark:bg-surface-900">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
+          >
+            {/* Section heading */}
+            <motion.div variants={fadeUp} className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 rounded-full border border-surface-200 dark:border-surface-700 bg-surface-50 dark:bg-surface-800 px-4 py-1.5 text-sm font-medium text-surface-600 dark:text-surface-400 mb-4">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
                     d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
@@ -362,7 +445,7 @@ export default function Home() {
                   key={skill}
                   variants={scaleIn}
                   whileHover={{ scale: 1.08, y: -2 }}
-                  className="inline-flex items-center rounded-xl border border-surface-200 dark:border-surface-700 bg-white dark:bg-surface-800 px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-medium text-surface-700 dark:text-surface-300 shadow-sm hover:border-accent-300 dark:hover:border-accent-500/30 hover:shadow-md hover:text-accent-600 dark:hover:text-accent-400 cursor-default select-none transition-colors"
+                  className="inline-flex items-center rounded-xl border border-surface-200 dark:border-surface-700 bg-surface-50 dark:bg-surface-800 px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-medium text-surface-700 dark:text-surface-300 shadow-sm hover:border-accent-300 dark:hover:border-accent-500/30 hover:shadow-md hover:text-accent-600 dark:hover:text-accent-400 cursor-default select-none transition-colors"
                 >
                   {skill}
                 </motion.span>

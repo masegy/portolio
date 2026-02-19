@@ -8,15 +8,15 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Augyeris Lioga Seandrio — Frontend Developer",
+  title: "Augyeris Lioga Seandrio — DevOps Engineer",
   description:
-    "Pengembang web frontend yang terampil menciptakan pengalaman web yang menarik dan ramah pengguna. Terbiasa berkoordinasi dengan tim, desainer UI/UX, dan backend developer.",
-  keywords: ["Frontend Developer", "React", "Next.js", "Tailwind CSS", "Microfrontend"],
-  authors: [{ name: "Augyeris Lioga Seandrio." }],
+    "DevOps Engineer dengan fondasi kuat di frontend development, berpengalaman dalam otomatisasi dan optimasi pipeline CI/CD, deployment infrastruktur, dan observabilitas aplikasi.",
+  keywords: ["DevOps Engineer", "CI/CD", "Jenkins", "Docker", "OpenShift", "React", "Next.js", "Tailwind CSS"],
+  authors: [{ name: "Augyeris Lioga Seandrio" }],
   openGraph: {
-    title: "Augyeris Lioga Seandrio — Frontend Developer",
+    title: "Augyeris Lioga Seandrio — DevOps Engineer",
     description:
-      "Pengembang web frontend yang terampil menciptakan pengalaman web yang menarik dan ramah pengguna.",
+      "DevOps Engineer berpengalaman dalam otomatisasi CI/CD, containerization, dan observabilitas aplikasi.",
     type: "website",
   },
 };
