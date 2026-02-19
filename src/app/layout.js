@@ -1,31 +1,31 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "../contexts/ThemeContext";
+import { ThemeProvider } from "../components/ThemeProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata = {
-  title: "Augyeris Lioga Seandrio - DevOps & Frontend Engineer",
-  description: "Portfolio of Augyeris Lioga Seandrio - DevOps and Frontend Engineer specialized in cloud infrastructure and modern web development",
+  title: "Augyeris Lioga Seandrio — Frontend Developer",
+  description:
+    "Pengembang web frontend yang terampil menciptakan pengalaman web yang menarik dan ramah pengguna. Terbiasa berkoordinasi dengan tim, desainer UI/UX, dan backend developer.",
+  keywords: ["Frontend Developer", "React", "Next.js", "Tailwind CSS", "Microfrontend"],
+  authors: [{ name: "Augyeris Lioga Seandrio." }],
+  openGraph: {
+    title: "Augyeris Lioga Seandrio — Frontend Developer",
+    description:
+      "Pengembang web frontend yang terampil menciptakan pengalaman web yang menarik dan ramah pengguna.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+    <html lang="id" suppressHydrationWarning>
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
