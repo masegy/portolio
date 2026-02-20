@@ -10,7 +10,7 @@ import BackToTop from '../components/BackToTop';
 const experiences = [
   {
     role: 'DevOps Engineer',
-    company: 'Wondr by BNI — PT Bank Negara Indonesia Tbk',
+    company: 'WONDR by BNI — PT Bank Negara Indonesia Tbk',
     period: 'Nov 2024 — Present',
     type: 'Full-time',
     points: [
