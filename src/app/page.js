@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import ThemeToggle from '../components/ThemeToggle';
 import BackToTop from '../components/BackToTop';
@@ -161,8 +162,70 @@ function BriefcaseIcon({ className }) {
 /* ─── Page ──────────────────────────────────────────────── */
 
 export default function Home() {
+  const [showPhoto, setShowPhoto] = useState(false);
+
   return (
     <div className="min-h-screen bg-surface-50 dark:bg-surface-950">
+
+      {/* ── Photo Modal ── */}
+      <AnimatePresence>
+        {showPhoto && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm cursor-pointer"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => setShowPhoto(false)}
+            onKeyDown={(e) => e.key === 'Escape' && setShowPhoto(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Profile photo"
+          >
+            <motion.div
+              className="relative cursor-default"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button */}
+              <button
+                onClick={() => setShowPhoto(false)}
+                className="absolute -top-4 -right-4 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-surface-900/80 text-white hover:bg-surface-800 transition-colors shadow-lg"
+                aria-label="Close photo"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Gradient ring */}
+              <div className="rounded-2xl p-[3px] bg-gradient-to-br from-accent-400 via-accent-500 to-accent-700 shadow-2xl shadow-accent-500/20">
+                <div className="rounded-2xl overflow-hidden bg-surface-50 dark:bg-surface-900 p-[2px]">
+                  <Image
+                    src="/profile.png"
+                    alt="Augyeris Lioga Seandrio"
+                    width={400}
+                    height={400}
+                    className="rounded-2xl object-cover w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 select-none pointer-events-none"
+                    draggable={false}
+                  />
+                </div>
+              </div>
+
+              {/* Name label */}
+              <p className="mt-4 text-center text-base font-semibold text-white">
+                Augyeris Lioga Seandrio
+              </p>
+              <p className="text-center text-sm text-surface-400">
+                DevOps Engineer
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ── Floating Header ── */}
       <header className="fixed top-0 inset-x-0 z-50">
@@ -204,11 +267,15 @@ export default function Home() {
           >
             {/* Profile photo */}
             <motion.div variants={fadeUp} custom={0} className="mb-8 flex justify-center">
-              <div className="relative">
+              <button
+                onClick={() => setShowPhoto(true)}
+                className="relative group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 rounded-full"
+                aria-label="View profile photo"
+              >
                 {/* Gradient glow behind photo */}
-                <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-accent-400 via-accent-500 to-accent-700 opacity-75 blur-sm" />
+                <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-accent-400 via-accent-500 to-accent-700 opacity-75 blur-sm group-hover:opacity-100 transition-opacity" />
                 {/* Gradient ring */}
-                <div className="relative rounded-full p-[3px] bg-gradient-to-br from-accent-400 via-accent-500 to-accent-700">
+                <div className="relative rounded-full p-[3px] bg-gradient-to-br from-accent-400 via-accent-500 to-accent-700 group-hover:scale-105 transition-transform duration-300">
                   <div className="rounded-full overflow-hidden bg-surface-50 dark:bg-surface-900 p-[2px]">
                     <Image
                       src="/profile.png"
@@ -216,11 +283,13 @@ export default function Home() {
                       width={160}
                       height={160}
                       priority
-                      className="rounded-full object-cover w-32 h-32 sm:w-40 sm:h-40"
+                      className="rounded-full object-cover w-32 h-32 sm:w-40 sm:h-40 select-none pointer-events-none"
+                      draggable={false}
+                      onDragStart={(e) => e.preventDefault()}
                     />
                   </div>
                 </div>
-              </div>
+              </button>
             </motion.div>
 
             {/* Status badge */}
