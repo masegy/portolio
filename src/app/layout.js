@@ -8,6 +8,7 @@ const inter = Inter({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://augyeris.vercel.app"),
   title: "Augyeris Lioga Seandrio — DevOps Engineer",
   description:
     "DevOps Engineer dengan fondasi kuat di frontend development, berpengalaman dalam otomatisasi dan optimasi pipeline CI/CD, deployment infrastruktur, dan observabilitas aplikasi.",
@@ -18,6 +19,12 @@ export const metadata = {
     description:
       "DevOps Engineer berpengalaman dalam otomatisasi CI/CD, containerization, dan observabilitas aplikasi.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Augyeris Lioga Seandrio — DevOps Engineer",
+    description:
+      "DevOps Engineer berpengalaman dalam otomatisasi CI/CD, containerization, dan observabilitas aplikasi.",
   },
 };
 
