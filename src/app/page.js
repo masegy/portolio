@@ -11,7 +11,7 @@ import BackToTop from '../components/BackToTop';
 const experiences = [
   {
     role: 'DevOps Engineer',
-    company: 'WONDR by BNI — PT Bank Negara Indonesia Tbk',
+    company: 'wondr by BNI — PT Bank Negara Indonesia Tbk',
     period: 'Nov 2024 — Present',
     type: 'Full-time',
     points: [
@@ -52,7 +52,7 @@ const experiences = [
   },
   {
     role: 'Information Technology Support Staff',
-    company: 'PT FAJAR MAS MURNI',
+    company: 'PT Fajar Mas Murni',
     period: 'Jan 2019 — Feb 2019',
     type: 'Internship',
     points: [
@@ -90,6 +90,7 @@ const skills = [
   'Elastic APM',
   'Vault',
   'GCP',
+  'AWS',
   'React JS',
   'Single-Spa JS',
   'Node.js',
