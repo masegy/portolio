@@ -5,61 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import ThemeToggle from '../components/ThemeToggle';
 import BackToTop from '../components/BackToTop';
+import LanguageToggle from '../components/LanguageToggle';
+import { useLanguage } from '../components/LanguageProvider';
 
 /* ─── Data ──────────────────────────────────────────────── */
-
-const experiences = [
-  {
-    role: 'DevOps Engineer',
-    company: 'wondr by BNI — PT Bank Negara Indonesia Tbk',
-    period: 'Nov 2024 — Present',
-    type: 'Full-time',
-    points: [
-      'Membangun dan memelihara pipeline CI/CD untuk aplikasi Android dan iOS menggunakan Jenkins, Fastlane, yang terintegrasi dengan Vault, Firebase App Distribution, dan App Store Connect.',
-      'Mengembangkan scripting deployment dinamis menggunakan Groovy (Jenkinsfile) dan Shell scripts untuk otomatisasi rilis.',
-      'Mengelola infrastruktur OpenShift on-premises, termasuk deployment microservice dan templating pipeline berbasis YAML.',
-      'Mengintegrasikan Elastic APM Java Agent untuk instrumentasi otomatis pada aplikasi Java.',
-      'Mendiagnosis dan menyelesaikan ketidakseimbangan penggunaan disk Kafka.',
-    ],
-  },
-  {
-    role: 'Frontend Developer',
-    company: 'PT Bank Negara Indonesia (Persero) Tbk',
-    period: 'Apr 2022 — Nov 2024',
-    type: 'Full-time',
-    points: [
-      'Mengembangkan proyek microsite yang terintegrasi dengan BNI Mobile Banking (Bluebird, Traveloka, Lifestyle).',
-      'Menyelesaikan dashboard microfrontend untuk BP Tapera, KKP, dan SKK Migas.',
-    ],
-  },
-  {
-    role: 'Intern Frontend Developer',
-    company: 'PT Bank Negara Indonesia (Persero) Tbk',
-    period: 'Feb 2022 — Apr 2022',
-    type: 'Internship',
-    points: [
-      'Mengimplementasikan arsitektur microfrontend menggunakan Single-spa JavaScript untuk proyek OPFA.',
-    ],
-  },
-  {
-    role: 'Production Control Management System Data Entry',
-    company: 'Sembcorp Marine Ltd',
-    period: 'Oct 2021 — Jan 2022',
-    type: 'Contract',
-    points: [
-      'Mengelola dokumentasi progresif untuk Fabrication Records dan Material Traceability Numbers.',
-    ],
-  },
-  {
-    role: 'Information Technology Support Staff',
-    company: 'PT Fajar Mas Murni',
-    period: 'Jan 2019 — Feb 2019',
-    type: 'Internship',
-    points: [
-      'Mengembangkan sistem web ticketing menggunakan .NET dan Bootstrap.',
-    ],
-  },
-];
 
 const certifications = [
   {
@@ -164,6 +113,45 @@ function BriefcaseIcon({ className }) {
 
 export default function Home() {
   const [showPhoto, setShowPhoto] = useState(false);
+  const { t } = useLanguage();
+
+  const experiences = [
+    {
+      role: t('exp1Role'),
+      company: t('exp1Company'),
+      period: t('exp1Period'),
+      type: t('exp1Type'),
+      points: t('exp1Points') || [],
+    },
+    {
+      role: t('exp2Role'),
+      company: t('exp2Company'),
+      period: t('exp2Period'),
+      type: t('exp2Type'),
+      points: t('exp2Points') || [],
+    },
+    {
+      role: t('exp3Role'),
+      company: t('exp3Company'),
+      period: t('exp3Period'),
+      type: t('exp3Type'),
+      points: t('exp3Points') || [],
+    },
+    {
+      role: t('exp4Role'),
+      company: t('exp4Company'),
+      period: t('exp4Period'),
+      type: t('exp4Type'),
+      points: t('exp4Points') || [],
+    },
+    {
+      role: t('exp5Role'),
+      company: t('exp5Company'),
+      period: t('exp5Period'),
+      type: t('exp5Type'),
+      points: t('exp5Points') || [],
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-surface-50 dark:bg-surface-950">
@@ -181,7 +169,7 @@ export default function Home() {
             onKeyDown={(e) => e.key === 'Escape' && setShowPhoto(false)}
             role="dialog"
             aria-modal="true"
-            aria-label="Profile photo"
+            aria-label={t('photoView')}
           >
             <motion.div
               className="relative cursor-default"
@@ -195,7 +183,7 @@ export default function Home() {
               <button
                 onClick={() => setShowPhoto(false)}
                 className="absolute -top-4 -right-4 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-surface-900/80 text-white hover:bg-surface-800 transition-colors shadow-lg"
-                aria-label="Close photo"
+                aria-label={t('photoClose')}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -221,7 +209,7 @@ export default function Home() {
                 Augyeris Lioga Seandrio
               </p>
               <p className="text-center text-sm text-surface-400">
-                DevOps Engineer
+                {t('role')}
               </p>
             </motion.div>
           </motion.div>
@@ -237,15 +225,20 @@ export default function Home() {
             </a>
 
             <div className="flex items-center gap-1 sm:gap-3">
-              {['Experience', 'Certifications', 'Skills'].map((item) => (
+              {[
+                { id: 'experience', label: t('navExperience') },
+                { id: 'certifications', label: t('navCertifications') },
+                { id: 'skills', label: t('navSkills') },
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.id}
+                  href={`#${item.id}`}
                   className="hidden sm:inline-flex px-3 py-1.5 rounded-lg text-sm font-medium text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors"
                 >
-                  {item}
+                  {item.label}
                 </a>
               ))}
+              <LanguageToggle />
               <ThemeToggle />
             </div>
           </div>
@@ -271,7 +264,7 @@ export default function Home() {
               <button
                 onClick={() => setShowPhoto(true)}
                 className="relative group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 rounded-full"
-                aria-label="View profile photo"
+                aria-label={t('photoView')}
               >
                 {/* Gradient glow behind photo */}
                 <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-accent-400 via-accent-500 to-accent-700 opacity-75 blur-sm group-hover:opacity-100 transition-opacity" />
@@ -300,7 +293,7 @@ export default function Home() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-500" />
                 </span>
-                Available for opportunities
+                {t('statusBadge')}
               </span>
             </motion.div>
 
@@ -319,7 +312,7 @@ export default function Home() {
               custom={3}
               className="mt-4 text-xl sm:text-2xl md:text-3xl font-semibold text-accent-600 dark:text-accent-400"
             >
-              DevOps Engineer
+              {t('role')}
             </motion.p>
 
             {/* Bio */}
@@ -328,7 +321,7 @@ export default function Home() {
               custom={4}
               className="mt-6 text-base sm:text-lg text-surface-600 dark:text-surface-400 leading-relaxed max-w-2xl mx-auto"
             >
-              DevOps Engineer dengan fondasi kuat di frontend development, berpengalaman dalam otomatisasi dan optimasi pipeline CI/CD, deployment infrastruktur, dan observabilitas aplikasi. Mahir menjembatani pengembangan dan operasional melalui scripting, containerization, dan alat orkestrasi. Terus belajar dan bersemangat untuk pengiriman perangkat lunak yang efisien, andal, dan aman.
+              {t('bio')}
             </motion.p>
 
             {/* Social links */}
@@ -364,10 +357,10 @@ export default function Home() {
             <motion.div variants={fadeUp} className="text-center mb-16">
               <div className="inline-flex items-center gap-2 rounded-full border border-surface-200 dark:border-surface-700 bg-surface-50 dark:bg-surface-800 px-4 py-1.5 text-sm font-medium text-surface-600 dark:text-surface-400 mb-4">
                 <BriefcaseIcon className="w-4 h-4" />
-                Work Experience
+                {t('expBadge')}
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-surface-50">
-                Perjalanan Karier
+                {t('expHeading')}
               </h2>
             </motion.div>
 
@@ -413,7 +406,7 @@ export default function Home() {
 
                       {/* Bullet points */}
                       <ul className="space-y-2 mt-4">
-                        {exp.points.map((point, j) => (
+                        {Array.isArray(exp.points) && exp.points.map((point, j) => (
                           <li key={j} className="flex gap-3 text-sm text-surface-600 dark:text-surface-400 leading-relaxed">
                             <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent-500/60 flex-shrink-0" />
                             {point}
@@ -445,10 +438,10 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
                     d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                 </svg>
-                Licenses & Certifications
+                {t('certBadge')}
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-surface-50">
-                Sertifikasi
+                {t('certHeading')}
               </h2>
             </motion.div>
 
@@ -457,7 +450,7 @@ export default function Home() {
               variants={stagger}
               className="grid grid-cols-1 sm:grid-cols-3 gap-4"
             >
-              {certifications.map((cert, i) => (
+              {certifications.map((cert) => (
                 <motion.div
                   key={cert.name}
                   variants={scaleIn}
@@ -498,10 +491,10 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
                     d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                 </svg>
-                Tech Stack
+                {t('skillsBadge')}
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-surface-50">
-                Keahlian Teknis
+                {t('skillsHeading')}
               </h2>
             </motion.div>
 
@@ -510,7 +503,7 @@ export default function Home() {
               variants={stagger}
               className="flex flex-wrap justify-center gap-3"
             >
-              {skills.map((skill, i) => (
+              {skills.map((skill) => (
                 <motion.span
                   key={skill}
                   variants={scaleIn}
@@ -530,7 +523,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 py-10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-surface-500 dark:text-surface-400">
-              © {new Date().getFullYear()} Augyeris Lioga Seandrio Built with Next.js & Tailwind CSS.
+              © {new Date().getFullYear()} Augyeris Lioga Seandrio {t('footerText')}
             </p>
             <div className="flex items-center gap-4">
               <a href="https://www.linkedin.com/in/augyeris" target="_blank" rel="noopener noreferrer" className="text-surface-400 hover:text-accent-500 transition-colors" aria-label="LinkedIn">
