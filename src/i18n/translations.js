@@ -1,14 +1,72 @@
 const translations = {
   en: {
     // Nav
+    navProjects: 'Projects',
     navExperience: 'Experience',
     navCertifications: 'Certifications',
     navSkills: 'Skills',
+    navContact: 'Contact',
 
     // Hero
     statusBadge: 'Available for opportunities',
-    role: 'DevOps Engineer',
-    bio: 'DevOps Engineer with a strong foundation in frontend development, experienced in CI/CD pipeline automation and optimization, infrastructure deployment, and application observability. Skilled at bridging development and operations through scripting, containerization, and orchestration tools. Continuously learning and passionate about efficient, reliable, and secure software delivery.',
+    role: 'DevOps Engineer & Platform Automation',
+    bio: 'DevOps Engineer with a robust background in frontend architecture, specializing in automated CI/CD pipelines, container orchestration, and application observability. Passionate about bridging development and operations to deliver resilient, secure, and rapid software deployments at enterprise scale.',
+    contactCta: 'Get in Touch',
+    copyEmail: 'Copy Email',
+    emailCopied: 'Email copied to clipboard!',
+    viewProjectsCta: 'View Architecture',
+
+    // Hero Pipeline Simulation
+    pipelineTitle: 'WONDR_CI_CD_PIPELINE',
+    pipelineBranch: 'main : release-v2.4.0',
+    pipelineTriggerBtn: 'Run Pipeline',
+    pipelineRunning: 'Executing Pipeline...',
+    pipelineSuccess: 'All Stages Passed',
+    stepCommit: 'Git commit push: release-candidate',
+    stepBuild: 'Jenkins build & Groovy script pass',
+    stepVault: 'HashiCorp Vault: secrets injected',
+    stepFastlane: 'Fastlane: iOS & Android artifacts generated',
+    stepDeploy: 'OpenShift cluster: zero-downtime deploy',
+    stepMonitor: 'Elastic APM: telemetry active & healthy',
+
+    // Metrics Bar
+    metricYearsVal: '4+',
+    metricYearsLabel: 'Years in Tech & Engineering',
+    metricPipelinesVal: '100%',
+    metricPipelinesLabel: 'Automated CI/CD Delivery',
+    metricScaleVal: 'Enterprise',
+    metricScaleLabel: 'Banking Grade Scale (WONDR)',
+    metricCertVal: 'ACA',
+    metricCertLabel: 'Alibaba Cloud Certified',
+
+    // Featured Projects
+    projectsBadge: 'Featured Architecture',
+    projectsHeading: 'Systems & Infrastructure Projects',
+    projectsSubheading: 'Production-grade CI/CD pipelines, enterprise container orchestration, observability, and banking microfrontends.',
+    
+    p1Title: 'WONDR by BNI Mobile CI/CD Automation',
+    p1Category: 'CI/CD & Mobile Release',
+    p1Org: 'WONDR by BNI',
+    p1Desc: 'End-to-end continuous integration and delivery architecture for Android and iOS banking apps, integrating Jenkins pipelines, Fastlane automation, HashiCorp Vault secrets, and multi-channel distribution.',
+    p1Impact: 'Automated manual release cycles into reliable, secure pipelines across Firebase App Distribution & Apple App Store Connect.',
+
+    p2Title: 'OpenShift Enterprise Microservices & YAML Templating',
+    p2Category: 'Cloud & Orchestration',
+    p2Org: 'Core Banking Infrastructure',
+    p2Desc: 'Orchestration and deployment automation for on-premises OpenShift Kubernetes clusters, designing reusable YAML pipeline templates and dynamic Groovy deployment scripts.',
+    p2Impact: 'Standardized microservice onboarding and eliminated deployment drifts across hybrid on-prem clusters.',
+
+    p3Title: 'Elastic APM Telemetry & Kafka Stream Stabilization',
+    p3Category: 'Observability & Streaming',
+    p3Org: 'Application Observability',
+    p3Desc: 'Auto-instrumentation of Java enterprise microservices using Elastic APM Java Agent, along with deep diagnosis and resolution of Kafka cluster disk imbalance issues.',
+    p3Impact: 'Restored distributed event streaming throughput and provided real-time latency tracing across core banking services.',
+
+    p4Title: 'BNI Mobile Banking Microsites & Single-Spa Microfrontends',
+    p4Category: 'Frontend & Microfrontends',
+    p4Org: 'PT Bank Negara Indonesia Tbk',
+    p4Desc: 'High-traffic commercial partner microsites embedded within BNI Mobile Banking (Traveloka, Bluebird, Lifestyle) and single-spa microfrontend architecture for state agencies.',
+    p4Impact: 'Delivered seamless native-webview hybrid performance serving millions of active bank customers.',
 
     // Experience
     expBadge: 'Work Experience',
@@ -63,13 +121,28 @@ const translations = {
     // Certifications
     certBadge: 'Licenses & Certifications',
     certHeading: 'Certifications',
+    verifiedCert: 'Verified Credential',
 
     // Skills
     skillsBadge: 'Tech Stack',
-    skillsHeading: 'Technical Skills',
+    skillsHeading: 'Technical Expertise',
+    tabAll: 'All Technologies',
+    tabCicd: 'CI/CD & Automation',
+    tabCloud: 'Cloud & Orchestration',
+    tabObservability: 'Observability & Streaming',
+    tabFrontend: 'Frontend & Web',
+
+    // Contact
+    contactBadge: 'Get In Touch',
+    contactHeading: 'Let’s Build Resilient Systems Together',
+    contactDesc: 'Open for DevOps, Cloud Infrastructure, and Platform Engineering roles or collaborations. Let’s connect to discuss how I can help streamline your engineering lifecycle.',
+    timezoneText: 'Jakarta, Indonesia (WIB / UTC+7)',
+    availabilityText: 'Available for opportunities',
+    sendMessage: 'Send an Email',
+    orConnect: 'Or find me on professional platforms:',
 
     // Footer
-    footerText: 'Built with Next.js & Tailwind CSS.',
+    footerText: 'Built with Next.js, Tailwind CSS & Framer Motion.',
 
     // Photo modal
     photoClose: 'Close photo',
@@ -78,14 +151,72 @@ const translations = {
 
   id: {
     // Nav
+    navProjects: 'Proyek',
     navExperience: 'Pengalaman',
     navCertifications: 'Sertifikasi',
     navSkills: 'Keahlian',
+    navContact: 'Kontak',
 
     // Hero
     statusBadge: 'Tersedia untuk peluang baru',
-    role: 'DevOps Engineer',
-    bio: 'DevOps Engineer dengan fondasi kuat di frontend development, berpengalaman dalam otomatisasi dan optimasi pipeline CI/CD, deployment infrastruktur, dan observabilitas aplikasi. Mahir menjembatani pengembangan dan operasional melalui scripting, containerization, dan alat orkestrasi. Terus belajar dan bersemangat untuk pengiriman perangkat lunak yang efisien, andal, dan aman.',
+    role: 'DevOps Engineer & Platform Automation',
+    bio: 'DevOps Engineer dengan fondasi kuat di frontend architecture, berpengalaman dalam otomatisasi pipeline CI/CD, orkestrasi container, dan observabilitas aplikasi. Berdedikasi menjembatani development dan operations untuk menghadirkan deployment perangkat lunak yang andal, aman, dan cepat dalam skala perbankan.',
+    contactCta: 'Hubungi Saya',
+    copyEmail: 'Salin Email',
+    emailCopied: 'Email berhasil disalin ke clipboard!',
+    viewProjectsCta: 'Lihat Arsitektur',
+
+    // Hero Pipeline Simulation
+    pipelineTitle: 'WONDR_CI_CD_PIPELINE',
+    pipelineBranch: 'main : release-v2.4.0',
+    pipelineTriggerBtn: 'Jalankan Pipeline',
+    pipelineRunning: 'Menjalankan Pipeline...',
+    pipelineSuccess: 'Semua Tahap Berhasil',
+    stepCommit: 'Git commit push: release-candidate',
+    stepBuild: 'Jenkins build & Groovy script lolos',
+    stepVault: 'HashiCorp Vault: injeksi rahasia aman',
+    stepFastlane: 'Fastlane: artefak iOS & Android dibuat',
+    stepDeploy: 'OpenShift cluster: zero-downtime deploy',
+    stepMonitor: 'Elastic APM: telemetri aktif & sehat',
+
+    // Metrics Bar
+    metricYearsVal: '4+',
+    metricYearsLabel: 'Tahun Pengalaman Teknologi',
+    metricPipelinesVal: '100%',
+    metricPipelinesLabel: 'Otomatisasi Rilis CI/CD',
+    metricScaleVal: 'Enterprise',
+    metricScaleLabel: 'Skala Perbankan (WONDR)',
+    metricCertVal: 'ACA',
+    metricCertLabel: 'Tersertifikasi Alibaba Cloud',
+
+    // Featured Projects
+    projectsBadge: 'Arsitektur Unggulan',
+    projectsHeading: 'Sistem & Proyek Infrastruktur',
+    projectsSubheading: 'Pipeline CI/CD skala produksi, orkestrasi kontainer enterprise, observabilitas sistem, dan microfrontend perbankan.',
+    
+    p1Title: 'Otomatisasi CI/CD Mobile WONDR by BNI',
+    p1Category: 'CI/CD & Rilis Mobile',
+    p1Org: 'WONDR by BNI',
+    p1Desc: 'Arsitektur continuous integration dan continuous delivery menyeluruh untuk aplikasi perbankan Android dan iOS, mengintegrasikan pipeline Jenkins, otomatisasi Fastlane, keamanan HashiCorp Vault, dan distribusi multi-channel.',
+    p1Impact: 'Mengotomatiskan siklus rilis manual menjadi pipeline yang andal dan aman ke Firebase App Distribution & Apple App Store Connect.',
+
+    p2Title: 'Microservices Enterprise OpenShift & YAML Templating',
+    p2Category: 'Cloud & Orkestrasi',
+    p2Org: 'Infrastruktur Inti Perbankan',
+    p2Desc: 'Orkestrasi dan otomatisasi deployment untuk kluster Kubernetes OpenShift on-premises, merancang template pipeline YAML yang dapat digunakan kembali dan skrip deployment dinamis Groovy.',
+    p2Impact: 'Menstandardisasi onboarding microservice dan mengeliminasi perbedaan konfigurasi rilis di seluruh kluster on-prem.',
+
+    p3Title: 'Telemetri Elastic APM & Stabilisasi Data Stream Kafka',
+    p3Category: 'Observabilitas & Streaming',
+    p3Org: 'Observabilitas Aplikasi',
+    p3Desc: 'Instrumentasi otomatis microservice enterprise Java menggunakan Elastic APM Java Agent, disertai diagnosis mendalam dan resolusi ketidakseimbangan disk kluster Kafka.',
+    p3Impact: 'Memulihkan kestabilan throughput event streaming terdistribusi dan memberikan pelacakan latensi real-time di seluruh layanan perbankan.',
+
+    p4Title: 'Microsite BNI Mobile Banking & Single-Spa Microfrontend',
+    p4Category: 'Frontend & Microfrontend',
+    p4Org: 'PT Bank Negara Indonesia Tbk',
+    p4Desc: 'Proyek microsite mitra komersial dengan trafik tinggi di dalam BNI Mobile Banking (Traveloka, Bluebird, Lifestyle) serta arsitektur single-spa microfrontend untuk instansi pemerintah.',
+    p4Impact: 'Menghadirkan performa hybrid native-webview yang mulus dan cepat melayani jutaan nasabah aktif perbankan.',
 
     // Experience
     expBadge: 'Pengalaman Kerja',
@@ -140,13 +271,28 @@ const translations = {
     // Certifications
     certBadge: 'Lisensi & Sertifikasi',
     certHeading: 'Sertifikasi',
+    verifiedCert: 'Kredensial Terverifikasi',
 
     // Skills
     skillsBadge: 'Tech Stack',
     skillsHeading: 'Keahlian Teknis',
+    tabAll: 'Semua Teknologi',
+    tabCicd: 'CI/CD & Otomatisasi',
+    tabCloud: 'Cloud & Orkestrasi',
+    tabObservability: 'Observabilitas & Streaming',
+    tabFrontend: 'Frontend & Web',
+
+    // Contact
+    contactBadge: 'Hubungi Saya',
+    contactHeading: 'Mari Membangun Sistem yang Andal Bersama',
+    contactDesc: 'Terbuka untuk posisi DevOps, Cloud Infrastructure, dan Platform Engineering atau kolaborasi teknis. Mari berdiskusi tentang bagaimana saya dapat membantu mengoptimalkan lifecycle engineering Anda.',
+    timezoneText: 'Jakarta, Indonesia (WIB / UTC+7)',
+    availabilityText: 'Tersedia untuk peluang baru',
+    sendMessage: 'Kirim Email',
+    orConnect: 'Atau terhubung di platform profesional:',
 
     // Footer
-    footerText: 'Dibuat dengan Next.js & Tailwind CSS.',
+    footerText: 'Dibuat dengan Next.js, Tailwind CSS & Framer Motion.',
 
     // Photo modal
     photoClose: 'Tutup foto',
