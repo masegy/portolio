@@ -15,7 +15,7 @@ export default function LanguageToggle() {
   return (
     <motion.button
       onClick={toggleLang}
-      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-200 dark:border-surface-700 bg-white dark:bg-surface-800 text-sm font-medium text-surface-600 dark:text-surface-400 hover:border-accent-300 dark:hover:border-accent-500/30 hover:text-accent-600 dark:hover:text-accent-400 transition-colors select-none"
+      className="inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 min-h-[40px] rounded-xl border border-surface-200 dark:border-surface-700 bg-white dark:bg-surface-800 text-xs sm:text-sm font-medium text-surface-600 dark:text-surface-400 hover:border-accent-300 dark:hover:border-accent-500/30 hover:text-accent-600 dark:hover:text-accent-400 transition-colors select-none cursor-pointer active:scale-95"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label={`Switch to ${lang === 'en' ? 'Indonesian' : 'English'}`}

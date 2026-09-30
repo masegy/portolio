@@ -39,12 +39,12 @@ export default function ThemeToggle() {
   return (
     <motion.button
       onClick={cycleTheme}
-      className="relative flex items-center gap-2 px-3 py-2 rounded-xl
+      className="relative flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 min-h-[40px] min-w-[40px] rounded-xl
         bg-surface-100 dark:bg-surface-800
         border border-surface-200 dark:border-surface-700
         text-surface-600 dark:text-surface-300
         hover:bg-surface-200 dark:hover:bg-surface-700
-        cursor-pointer select-none"
+        cursor-pointer select-none active:scale-95"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label={`Current theme: ${getLabel()}. Click to change.`}
